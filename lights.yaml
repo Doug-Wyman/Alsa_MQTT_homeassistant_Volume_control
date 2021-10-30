@@ -1,0 +1,16 @@
+  - platform: mqtt
+    name: "BedroomVolume"
+    unique_id: "BedroomVolume"
+    command_topic: "/bedroom/volume/xset"
+    state_topic: "/bedroom/volume/xstatus"
+    brightness_command_topic: "/bedroom/volume/set"
+    brightness_state_topic: "/bedroom/volume/status"
+    brightness_scale: 100
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic: False
+    on_command_type: 'brightness'
+    retain: True
+
+ 

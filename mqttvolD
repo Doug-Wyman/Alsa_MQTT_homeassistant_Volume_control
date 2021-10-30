@@ -1,0 +1,62 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          Backlight Control
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: RPiBacklight2MQTT
+# Description:       This sends MQTT messages on detect
+### END INIT INFO
+
+# Author: Doug
+#
+
+
+
+#!/bin/sh
+
+RETVAL=0
+prog="pyvol /var/www/html/MqttVol.py"
+start() {
+	echo -n $"Starting MqttVol:"
+	echo $prog
+	$prog &
+}
+
+stop() {
+	echo -n $"stopping MqttVol:"
+	echo ""
+	pkill pyvol
+}
+
+reload() {
+	echo -n $"Reloading MqttVol:"
+	echo ""
+	pkill pyvol
+	$prog &
+}
+
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	restart)
+		stop
+		start
+		;;
+	reload)
+		reload
+		;;
+	status)
+		status MqttVol
+		RETVAL=$?
+		;;
+	*)
+		echo $"Usage: $0 {start|stop|restart|reload|condrestart|status}"
+		RETVAL=1
+esac
+exit $RETVAL
