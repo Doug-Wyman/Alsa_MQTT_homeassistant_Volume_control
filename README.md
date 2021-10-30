@@ -3,7 +3,7 @@
 <html lang="en" data-color-mode="auto" data-light-theme="dark" data-dark-theme="dark" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Alsa remote volume</title>
+
 </head>
 <body style="word-wrap: break-word; color: white; background-color: black;">
     <h1>MQTT Alsa Volume remote control</h1>
