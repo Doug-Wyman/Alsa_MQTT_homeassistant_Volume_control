@@ -14,7 +14,7 @@
         1)  On the Raspberry Pi or other devices using Alsa, copy the MqttVol.py and RpiMqtt.conf files to a convenient folder.
         The folder used in testing was /var/www/html. Changes to this must be reflected in the mqttvolD file.</br></br>
         2)  The python app must be run by the instance of user pi's current desktop or it may not see the Alsa outputs.</br>
-        It is most convenient to start the app at the Pi desktop start as this will insure the proper Alsa output is available.</br>
+        It is most convenient to start the app at the Pi desktop start as this will ensure the proper Alsa output is available.</br>
         To enable startup at boot and manual restart of the app, copy mqttvolD to the /etc/init.d folder.
         </br></br>
         3)  Copy MqttVolStart to the /home/pi/.config/autostart folder and insure it has execute rights.
